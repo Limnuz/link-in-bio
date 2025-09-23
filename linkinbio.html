@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Link in Bio Multi-tema</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="youtube"> <!-- neutral, youtube, amazon, instagram -->
+
+
+  <div class="container">
+    
+    <!-- Foto -->
+    <div class="photo">
+      <img src="foto.png" alt="Foto de Perfil" id="profile-photo">
+    </div>
+
+    <!-- Nome -->
+    <h1 class="name">SEU NOME</h1>
+    <p class="username">@seuusuario</p>
+
+    <!-- Bio -->
+    <p class="bio">
+      Bem-vindo! Aqui você encontra todos os meus links importantes.
+    </p>
+
+    <!-- Links -->
+    <div class="links">
+      <a href="#">VISITAR MEU SITE</a>
+      <a href="#">MEUS SERVIÇOS</a>
+      <a href="#">BLOG</a>
+      <a href="#">DOWNLOAD</a>
+      <a href="#">PODCAST</a>
+      <a href="#">AGENDAR</a>
+    </div>
+  </div>
+
+  <script>
+    // Temas disponíveis
+    const themes = ["neutral", "youtube", "amazon", "instagram"];
+    let current = 0;
+
+    const photo = document.getElementById("profile-photo");
+
+    photo.addEventListener("click", () => {
+      current = (current + 1) % themes.length;
+      document.body.className = themes[current];
+    });
+  </script>
+
+</body>
+</html>
