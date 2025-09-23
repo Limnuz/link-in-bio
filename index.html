@@ -39,7 +39,9 @@
   <script>
     // Temas disponíveis
     const themes = ["neutral", "youtube", "amazon", "instagram"];
-    let current = 0;
+
+   // Pega a classe atual do body e define o índice correto
+    let current = themes.indexOf(document.body.className);
 
     const photo = document.getElementById("profile-photo");
 
@@ -51,3 +53,4 @@
 
 </body>
 </html>
+
