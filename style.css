@@ -60,12 +60,27 @@ body {
 
 /* Links */
 .links a {
-  display: block;
+  /*display: block;*/
   font-weight: 600;
-  padding: 14px;
-  border-radius: 6px;
+  /*padding: 14px;*/
+  /*border-radius: 6px;*/
   margin-bottom: 15px;
   text-decoration: none;
+
+  display: flex;
+  align-items: center; /* centraliza verticalmente ícone + texto */
+  gap: 8px;            /* espaço entre ícone e texto */
+  background: orange;
+  padding: 10px 15px;
+  border-radius: 8px;
+  color: black;
+  margin: 5px 0;
+}
+
+.link-text {
+  flex: 1;              /* ocupa todo espaço restante */
+  text-align: left;     /* força alinhamento à esquerda */
+  line-height: 1.3;     /* melhora leitura em várias linhas */
 }
 
 /* Rodapé base */
@@ -209,4 +224,13 @@ body.instagram .credit a {
 }
 body.instagram .credit a:hover {
   opacity: 0.8;
+}
+
+.social-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  object-fit: cover;
+  background: #fff; /* opcional: fundo branco atrás do SVG */
+  border: 2px solid rgb(255, 255, 255); /* borda branca */
 }
