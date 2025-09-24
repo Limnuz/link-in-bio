@@ -62,17 +62,27 @@
 
   <script>
     // Temas disponíveis
-    const themes = ["neutral", "youtube", "amazon", "instagram"];
+  const themes = ["neutral", "youtube", "amazon", "instagram", "linkedin"];
 
-   // Pega a classe atual do body e define o índice correto
-    let current = themes.indexOf(document.body.className);
+  // Pega parâmetros da URL
+  const params = new URLSearchParams(window.location.search);
+  const themeParam = params.get("i");
 
-    const photo = document.getElementById("profile-photo");
+  // Verifica se o valor passado é um tema válido
+  if (themes.includes(themeParam)) {
+    document.body.className = themeParam;
+  } else {
+    document.body.className = "neutral"; // fallback
+  }
 
-    photo.addEventListener("click", () => {
-      current = (current + 1) % themes.length;
-      document.body.className = themes[current];
-    });
+  // ----- SEU CÓDIGO DE TROCAR TEMAS AO CLICAR NA FOTO -----
+  let current = themes.indexOf(document.body.className);
+  const photo = document.getElementById("profile-photo");
+
+  photo.addEventListener("click", () => {
+    current = (current + 1) % themes.length;
+    document.body.className = themes[current];
+  });
   </script>
 
 </body>
